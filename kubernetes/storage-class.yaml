@@ -1,8 +1,8 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: gp3-csi
-provisioner: ebs.csi.aws.com
+  name: gp3
+provisioner: ebs.csi.eks.amazonaws.com
 parameters:
   type: gp3
   fsType: ext4
