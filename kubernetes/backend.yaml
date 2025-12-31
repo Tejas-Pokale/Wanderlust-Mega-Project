@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: tejaspokale/wanderlust-backend-beta
+          image: tejaspokale/wanderlust-backend-beta:v2.1
           ports:
             - containerPort: 8080
 ---
