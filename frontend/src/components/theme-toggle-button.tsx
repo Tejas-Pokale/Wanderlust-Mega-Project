@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from 'react';
-import Sun from '../../public/svg/sun.svg';
-import Moon from '../../public/svg/moon.svg';
+import Sun from '../../public/assets/svg/sun.svg';
+import Moon from '../../public/assets/svg/moon.svg';
 function ThemeToggle() {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
   const toggleTheme = () => {
