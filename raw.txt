@@ -1,0 +1,1 @@
+http://a5023766b8ffd4e3087b4a80fccf7001-916008693.ap-south-1.elb.amazonaws.com/src/pages/details-page.tsx

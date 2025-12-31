@@ -9,3 +9,4 @@ terraform\terraform.tfstate
 terraform\terraform.tfstate.backup
 kubernetes\assets
 Assets
+frontend\node_modules
