@@ -1,32 +1,35 @@
 # ------------------- Stage 1: Build Stage ------------------------------
 FROM node:21 AS frontend-builder
 
-# Set the working directory to /app
 WORKDIR /app
 
-# Copy the package.json and package-lock.json for dependency installation
+# Copy dependency manifests first (better caching)
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies (deterministic + faster)
+RUN npm ci
 
-# Copy the rest of the application code
+# Copy application source
 COPY . .
 
-# ------------------- Stage 2: Final Stage ------------------------------
-FROM node:21-slim
+# Build production assets
+RUN npm run build
 
-# Set the working directory to /app
-WORKDIR /app
 
-# Copy built assets and dependencies from frontend-builder stage
-COPY --from=frontend-builder /app .
+# ------------------- Stage 2: Production Runtime -----------------------
+FROM nginx:alpine
 
-# Copy the .env.sample file to .env.local
-COPY .env.docker .env.local
+# Remove default nginx config
+RUN rm /etc/nginx/conf.d/default.conf
 
-# Expose port 5173 for the Node.js application
-EXPOSE 5173
+# Copy custom nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Define the default command to run the application in development mode
-CMD ["npm", "run", "dev", "--", "--host"]
+# Copy built assets from builder stage
+COPY --from=frontend-builder /app/dist /usr/share/nginx/html
+
+# Expose HTTP port
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
