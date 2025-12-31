@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import AddGoogleIcon from '@/assets/svg/google-color-icon.svg';
-import AddGithubIcon from '@/assets/svg/github-icon.svg';
+import AddGoogleIcon from '../../public/svg/google-color-icon.svg';
+import AddGithubIcon from '../../public/svg/github-icon.svg';
 import { useForm } from 'react-hook-form';
 import type { FieldValues } from 'react-hook-form';
 import { TSignUpSchema, signUpSchema } from '@/lib/types';

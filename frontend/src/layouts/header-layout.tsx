@@ -1,5 +1,5 @@
 import ThemeToggle from '@/components/theme-toggle-button';
-import AddIcon from '@/assets/svg/add-icon-white.svg';
+import AddIcon from '../../public/svg/add-icon-white.svg';
 import { useNavigate } from 'react-router-dom';
 import Hero from '@/components/hero';
 function header() {

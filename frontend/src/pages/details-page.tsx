@@ -1,5 +1,5 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import navigateBackWhiteIcon from '@/assets/svg/navigate-back-white.svg';
+import navigateBackWhiteIcon from '../../public/assets/svg/navigate-back-white.svg';
 import formatPostTime from '@/utils/format-post-time';
 import CategoryPill from '@/components/category-pill';
 import { useEffect, useState } from 'react';
