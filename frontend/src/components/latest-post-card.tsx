@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import linkIcon from '/assets/svg/link.svg';
+import linkIcon from '@/assets/svg/link.svg';
 import Post from '@/types/post-type';
 import formatPostTime from '@/utils/format-post-time';
 import CategoryPill from '@/components/category-pill';

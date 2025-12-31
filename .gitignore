@@ -10,3 +10,4 @@ terraform\terraform.tfstate.backup
 kubernetes\assets
 Assets
 frontend\node_modules
+frontend\dist
